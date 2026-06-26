@@ -1,22 +1,7 @@
 const NOTES_SHARP = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const FLAT_TO_SHARP = { Db:'C#', Eb:'D#', Gb:'F#', Ab:'G#', Bb:'A#' };
 
-const sampleSongs = [
-  {
-    title: 'That Mælti Mín Móðir',
-    artist: 'Tradicional / inspiração nórdica',
-    key: 'Am',
-    setlist: true,
-    lyrics: `[Am]That mælti mín móðir\n[Em]At mér skyldi kaupa\n[Am]Fley ok fagrar árar\n[C]Fara á brott með víkingum\n\n[Dm]Standa upp í stafni\n[Am]Stýra dýrum knerri\n[Em]Halda svá til hafnar\n[Am]Hǫggva mann ok annan`
-  },
-  {
-    title: 'Asa Branca',
-    artist: 'Luiz Gonzaga / Humberto Teixeira',
-    key: 'G',
-    setlist: false,
-    lyrics: `[G]Quando olhei a terra ardendo\n[D]Qual fogueira de São João\n[D7]Eu perguntei a Deus do céu, ai\n[G]Por que tamanha judiação`
-  }
-];
+const sampleSongs = [];
 
 let songs = JSON.parse(localStorage.getItem('raybanCifrasSongs') || 'null') || sampleSongs;
 let current = 0;
