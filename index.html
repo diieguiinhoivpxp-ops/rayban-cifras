@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ray-Ban Cifras Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <header class="topbar">
+      <div>
+        <h1>Ray-Ban Cifras</h1>
+        <p id="currentSongMeta">Modo músico para display pequeno</p>
+      </div>
+      <button id="stageToggle" class="ghost">Modo palco</button>
+    </header>
+
+    <section class="toolbar" aria-label="Controles principais">
+      <input id="searchInput" type="search" placeholder="Buscar música..." autocomplete="off" />
+      <button id="addSongBtn">+ Música</button>
+      <button id="setlistBtn">Setlist</button>
+    </section>
+
+    <section class="layout">
+      <aside class="songList" aria-label="Biblioteca de músicas">
+        <h2>Biblioteca</h2>
+        <div id="songs"></div>
+      </aside>
+
+      <section class="reader" aria-label="Leitor de cifras">
+        <div class="readerControls">
+          <button id="prevSong">◀</button>
+          <button id="transposeDown">Tom -</button>
+          <strong id="transposeValue">0</strong>
+          <button id="transposeUp">Tom +</button>
+          <button id="fontDown">A-</button>
+          <button id="fontUp">A+</button>
+          <button id="scrollToggle">Auto</button>
+        </div>
+
+        <article id="songView" class="songView" tabindex="0"></article>
+
+        <div class="scrollControls">
+          <label>
+            Velocidade
+            <input id="speedRange" type="range" min="0" max="10" value="3" />
+          </label>
+          <button id="nextSong">Próxima ▶</button>
+        </div>
+      </section>
+    </section>
+
+    <dialog id="songDialog">
+      <form method="dialog" class="dialogBody">
+        <h2>Adicionar / editar música</h2>
+        <label>Título
+          <input id="songTitle" type="text" placeholder="Nome da música" />
+        </label>
+        <label>Artista
+          <input id="songArtist" type="text" placeholder="Artista / banda" />
+        </label>
+        <label>Tom original
+          <input id="songKey" type="text" placeholder="Ex.: Am, C, Dm" />
+        </label>
+        <label>Cifra
+          <textarea id="songLyrics" rows="14" placeholder="Cole a cifra aqui. Use acordes entre colchetes, ex.: [Am]Minha terra..."></textarea>
+        </label>
+        <div class="dialogActions">
+          <button id="cancelDialog" value="cancel">Cancelar</button>
+          <button id="saveSong" value="default">Salvar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="setlistDialog">
+      <form method="dialog" class="dialogBody">
+        <h2>Setlist</h2>
+        <p>Toque nas músicas da biblioteca para alternar favorito/setlist.</p>
+        <div id="setlistView"></div>
+        <div class="dialogActions">
+          <button value="default">Fechar</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
